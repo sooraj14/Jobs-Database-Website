@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block title %}
+    Categories
+{% endblock title %}
+
+{% block body %}
+
+
+    <!-- Header Part Start -->
+    <nav class="navbar navbar-expand-lg " style="background-color:#7533f9 ;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/state">Jobefy</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              
+              
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Select the options
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/aerospace">Aerospace & Aviation</a></li>
+                  <li><a class="dropdown-item" href="/pilot">Airline Pilot</a></li>
+                  
+                  <li><a class="dropdown-item" href="/materials">Aerospace Materials Specialist</a></li>
+                </ul>
+
+            </ul>
+            <form class="d-flex" role="search", method="POST">
+              <input class="form-control me-2" for="search" name="search" type="search" placeholder="Enter Company name" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      
+<!-- Header part End -->
+
+<div class="table-responsive ">
+<table class="table table-dark table-hover table-bordered" style= "margin:0 auto; width: 500px;">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">State</th>
+      </tr>
+    </thead>
+    <tbody>
+            
+      <tr>
+        <th scope="row">{{alldata[0][0]}}</th>
+        <td><a href="/aerospace">{{alldata[0][1]}}</a></td>
+      </tr>
+      <tr>
+        <th scope="row">{{alldata[1][0]}}</th>
+        <td><a href="/pilot">{{alldata[1][1]}}</a></td>
+      </tr><tr>
+        <th scope="row">{{alldata[2][0]}}</th>
+        <td><a href="/materials">{{alldata[2][1]}}</a></td>
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
+
+{% endblock body %}
